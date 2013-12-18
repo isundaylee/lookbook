@@ -22,4 +22,6 @@ describe Style do
     expect(build(:style, url: '')).to be_valid
   end
 
+  it { should belong_to(:product) }
+
 end

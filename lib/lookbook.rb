@@ -22,7 +22,7 @@ module Lookbook
     private
 
       def initialize_schema
-        schema_version = 201312180003
+        schema_version = 201312180004
 
         ActiveRecord::Migration.verbose = false
 
@@ -34,11 +34,17 @@ module Lookbook
         ActiveRecord::Schema.define(version: schema_version) do |schema|
 
           create_table :styles do |t|
-            t.string :title
-            t.float :price
-            t.float :current_price
-            t.string :url
+            t.string   :title
+            t.float    :price
+            t.float    :current_price
+            t.string   :url
+            t.integer  :product_id
 
+            t.datetime :updated_at
+            t.datetime :created_at
+          end
+
+          create_table :products do |t|
             t.datetime :updated_at
             t.datetime :created_at
           end

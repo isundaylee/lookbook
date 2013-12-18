@@ -9,6 +9,7 @@ require 'lookbook'
 
 require 'fileutils'
 require 'factory_girl'
+require 'shoulda'
 
 require 'factories'
 
