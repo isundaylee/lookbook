@@ -6,4 +6,9 @@ FactoryGirl.define do
     # Wow! Google sells shirt?
     url 'http://google.com'
   end
+
+  factory :category do
+    title '2013 Winter'
+    parent_id nil
+  end
 end

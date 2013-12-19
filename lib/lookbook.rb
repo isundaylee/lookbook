@@ -7,6 +7,7 @@ module Lookbook
 
   require 'lookbook/product'
   require 'lookbook/style'
+  require 'lookbook/category'
 
   class Lookbook
 
@@ -22,7 +23,7 @@ module Lookbook
     private
 
       def initialize_schema
-        schema_version = 201312180004
+        schema_version = 201312180007
 
         ActiveRecord::Migration.verbose = false
 
@@ -45,6 +46,14 @@ module Lookbook
           end
 
           create_table :products do |t|
+            t.datetime :updated_at
+            t.datetime :created_at
+          end
+
+          create_table :categories do |t|
+            t.string   :title
+            t.integer  :parent_id
+
             t.datetime :updated_at
             t.datetime :created_at
           end
