@@ -29,7 +29,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
   # Create the lookbook object
-  config.before(:all) do
+  config.before(:each) do
     @db_path = File.expand_path('~/Library/Caches/lookbook_spec.db')
     @lookbook = Lookbook::Lookbook.new(@db_path)
     log_path = File.expand_path('~/Library/Caches/lookbook_spec.log')
@@ -38,7 +38,7 @@ RSpec.configure do |config|
     $stdout = $stderr = log_file
   end
 
-  config.after(:all) do
+  config.after(:each) do
     FileUtils.rm_f(@db_path)
     $stdout = STDOUT
     $stderr = STDERR

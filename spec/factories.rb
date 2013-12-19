@@ -10,5 +10,6 @@ FactoryGirl.define do
   factory :category do
     title '2013 Winter'
     parent_id nil
+    name '2013winter'
   end
 end

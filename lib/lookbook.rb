@@ -23,7 +23,7 @@ module Lookbook
     private
 
       def initialize_schema
-        schema_version = 201312180007
+        schema_version = 201312180008
 
         ActiveRecord::Migration.verbose = false
 
@@ -53,6 +53,7 @@ module Lookbook
           create_table :categories do |t|
             t.string   :title
             t.integer  :parent_id
+            t.string   :name
 
             t.datetime :updated_at
             t.datetime :created_at
